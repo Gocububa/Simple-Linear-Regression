@@ -62,7 +62,7 @@ anova(my_reg)
 
 
 library(tidyverse)
-data |> ggplot(aes(x,y)) +
+data %>% ggplot(aes(x,y)) +
   geom_point() +
   geom_smooth(method = "lm")
 
