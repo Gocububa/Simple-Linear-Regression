@@ -4,6 +4,8 @@ datam<-read.csv('C:/Users/ASUS/Documents/IceCream.csv',header=TRUE, sep=',')
 
 # Load necessary libraries
 library(DT)
+library(corrplot)
+library(ggplot2)
 
 # Load the dataset
 datam <- read.csv('C:/Users/ASUS/Documents/IceCream.csv', header = TRUE, sep = ',')
@@ -19,7 +21,6 @@ y<-datam$Ice.Cream.Profits
 my_reg<-lm(y~x,datam)
 
 #linearity
-library(ggplot2)
 ggplot(datam,aes(x=x,y=y))+
   geom_point()+
   geom_smooth(method="lm", col="red") 
@@ -29,10 +30,6 @@ ggplot(datam,aes(x=x,y=y))+
 #equal variances
 par(mfrow=c(2,2))
 plot(my_reg)
-
-
-
-library(corrplot)
 
 
 # Select numeric columns only
@@ -60,7 +57,7 @@ anova(my_reg)
 
 
 
-#for another way to illustrate the simple linear regression
+#for another way to illustrate the linearity in our simple linear regression project
 library(tidyverse)
 data %>% ggplot(aes(x,y)) +
   geom_point() +
