@@ -60,7 +60,7 @@ anova(my_reg)
 
 
 
-
+#for another way to illustrate the simple linear regression
 library(tidyverse)
 data %>% ggplot(aes(x,y)) +
   geom_point() +
